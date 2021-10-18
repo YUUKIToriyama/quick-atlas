@@ -16,7 +16,6 @@ cli.option("-o, --output <fileName>", "出力ファイルの名前", {
 });
 // 画像ファイルのフォーマットを指定します。
 cli.option("-t, --type <fileType>", "出力ファイルのフォーマット", {
-	default: "png",
 	validator: Caporal.program.STRING
 });
 // 画像ファイルのサイズを指定します。
