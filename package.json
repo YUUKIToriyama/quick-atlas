@@ -6,6 +6,7 @@
   "bin": "dist/bin.js",
   "scripts": {
     "build": "rimraf ./dist && tsc",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,7 +14,8 @@
     "url": "git+https://github.com/YUUKIToriyama/quick-atlas.git"
   },
   "keywords": [
-    "osm"
+    "osm",
+    "japan"
   ],
   "author": "YUUKIToriyama <github@toriyama.dev>",
   "license": "GPL-2.0",
