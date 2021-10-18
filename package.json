@@ -1,0 +1,34 @@
+{
+  "name": "@toriyama/quick-atlas",
+  "version": "0.0.1",
+  "description": "住所を入れるだけで地図を簡単保存🗾💾",
+  "main": "dist/main.js",
+  "bin": "dist/bin.js",
+  "scripts": {
+    "build": "rimraf ./dist && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YUUKIToriyama/quick-atlas.git"
+  },
+  "keywords": [
+    "osm"
+  ],
+  "author": "YUUKIToriyama <github@toriyama.dev>",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/YUUKIToriyama/quick-atlas/issues"
+  },
+  "homepage": "https://github.com/YUUKIToriyama/quick-atlas#readme",
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "@caporal/core": "^2.0.2",
+    "@geolonia/normalize-japanese-addresses": "^2.3.1",
+    "osm-static-maps": "^3.10.3",
+    "puppeteer": "^10.4.0"
+  }
+}
