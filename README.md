@@ -1,5 +1,8 @@
 # quick-atlas
 
+[![npm version](https://badge.fury.io/js/@toriyama%2Fquick-atlas.svg)](https://badge.fury.io/js/@toriyama%2Fquick-atlas)
+[![GitHub version](https://badge.fury.io/gh/yuukitoriyama%2Fquick-atlas.svg)](https://badge.fury.io/gh/yuukitoriyama%2Fquick-atlas)
+
 住所を入れるだけで地図を簡単保存 🗾💾
 
 ## What's this?
@@ -13,7 +16,8 @@ quick-atlas 東京都港区芝公園４丁目２−８ -o tokyo-tower.png
 
 ![https://i.imgur.com/q9awUUB.png](https://i.imgur.com/q9awUUB.png)
 
-日本国内ほぼすべての住所に対応しています。もしうまく行かない住所があれば[Issue](https://github.com/YUUKIToriyama/quick-atlas/issues)からお知らせください。
+日本国内ほぼすべての住所に対応しています。もしうまく行かない住所があれば[Issue](https://github.com/YUUKIToriyama/quick-atlas/issues)からお知らせください。  
+地図は OpenStreetMap を利用しています。OpenStreetMap.org とすべてのコントリビューターに感謝を！
 
 ## Options
 
@@ -27,6 +31,13 @@ quick-atlas 東京都港区芝公園４丁目２−８ -o tokyo-tower.png
 | --height     | 出力ファイルの縦のサイズを指定します。   | Number(px)                   |
 | -z, --zoom   | 地図のズームレベルを指定します。         | Number(0 から 20 の間の整数) |
 | --scale      | スケールを表示するかどうかを指定します。 | Boolean                      |
+| --tileserver | お好みでタイルサーバーを指定できます。   | String(タイルサーバーの URL) |
+
+`--tileserver`オプションを使うと、標準の OpenStreetMap ではなくお好みの地図タイルを用いることができます(WMTS のみ TMS 形式には非対応)。
+
+```terminal
+quick-atlas 東京都港区芝公園４丁目２−８ -o tokyoTower_gsi.jpg --tileserver https://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg
+```
 
 ## Installation
 

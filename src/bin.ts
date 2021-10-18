@@ -33,6 +33,10 @@ cli.option("-z, --zoom <number>", "ズームレベル", {
 cli.option("--scale <boolean>", "スケールを表示するかどうか", {
 	validator: Caporal.program.BOOLEAN
 });
+// お好みでタイルサーバーを指定します。
+cli.option("--tileserver <url>", "タイルサーバーのURL", {
+	validator: Caporal.program.STRING
+});
 cli.action(({ logger, args, options }) => {
 	// 指定されたフォーマットとファイル名に含まれる拡張子に齟齬がある場合警告を表示
 	if (options.type == "jpeg") {
@@ -52,7 +56,8 @@ cli.action(({ logger, args, options }) => {
 		imageWidth: options.width as number,
 		imageHeight: options.height as number,
 		zoomLevel: options.zoom as any,
-		scale: options.scale as boolean
+		scale: options.scale as boolean,
+		tileServer: options.tileserver as string
 	}).catch(error => {
 		throw error;
 	});

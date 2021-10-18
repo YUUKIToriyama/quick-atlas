@@ -9,6 +9,7 @@ export interface QuickAtlasOptions {
 	zoomLevel?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 // 地図の拡大率を指定(0から20の整数)
 	scale?: boolean // 縮尺を表示するかどうかを指定(boolean)
 	outputFileName: string // 出力する画像の名前を指定(string)
+	tileServer?: string // お好みの地図タイルを指定
 }
 
 export const quickAtras = async (address: string, options: QuickAtlasOptions) => {
@@ -27,7 +28,8 @@ export const quickAtras = async (address: string, options: QuickAtlasOptions) =>
 		center: `${result.lng}, ${result.lat}`,
 		zoom: options.zoomLevel || 15,
 		type: options.imageType || "png",
-		scale: options.scale || false
+		scale: options.scale || false,
+		tileserverUrl: options.tileServer
 	});
 	// 画像の書き出し
 	await fs.writeFile(options.outputFileName, imageBuffer).catch(error => {
